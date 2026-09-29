@@ -3,119 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Live Quiz | TECH FUSION 2K26</title>
-<style>
-*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Segoe UI,sans-serif;background:#050b14;color:#f5f7fb;min-height:100vh}
-body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 85% 10%,rgba(0,136,255,.18),transparent 35%),radial-gradient(circle at 10% 90%,rgba(123,67,255,.14),transparent 35%);pointer-events:none}
-header{height:72px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between;padding:0 6%;position:relative;z-index:2;background:rgba(5,11,20,.8);backdrop-filter:blur(14px)}
-.logo{font-weight:900;letter-spacing:.5px}.logo span{color:#54b7ff}.logo small{color:#54b7ff}.back{color:#aebbd0;text-decoration:none;font-size:14px}
-main{width:min(900px,92%);margin:40px auto 70px;position:relative;z-index:1}
-.hero{text-align:center;margin-bottom:28px}.badge{display:inline-block;padding:7px 12px;border:1px solid rgba(84,183,255,.35);border-radius:999px;color:#70c2ff;font-size:11px;font-weight:800;letter-spacing:1.8px}.hero h1{font-size:clamp(34px,7vw,62px);margin:12px 0 6px}.hero p{color:#8f9db2}
-.card{background:rgba(10,20,34,.9);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:28px;box-shadow:0 25px 80px rgba(0,0,0,.35)}
-.login{max-width:600px;margin:auto}.login h2{margin-top:0}.muted{color:#8f9db2;line-height:1.6}
-input{width:100%;padding:15px;margin:7px 0;background:#071321;border:1px solid #25384e;border-radius:12px;color:white;font-size:16px;outline:none}input:focus{border-color:#54b7ff}
-.btn{display:block;width:100%;padding:15px;border:0;border-radius:12px;background:#fff;color:#06101d;font-weight:900;cursor:pointer;margin-top:12px;font-size:15px}.btn:disabled{opacity:.4;cursor:not-allowed}
-.rules{margin:18px 0;padding:15px;background:#081525;border-radius:13px;color:#aebbd0;font-size:13px;line-height:1.7}.rules b{color:#fff}
-.quiz{display:none}.quiz-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;color:#aebbd0}.counter{font-size:14px}.timer{font-size:30px;font-weight:950;color:#fff}.timer.warn{color:#ffcc66}.timer.danger{color:#ff6969}
-.progress{height:5px;background:#142438;border-radius:99px;overflow:hidden;margin-bottom:25px}.progress i{display:block;height:100%;background:#54b7ff;width:0%;transition:width .2s}
-.question{font-size:clamp(21px,4vw,31px);line-height:1.35;margin:0 0 22px}.options{display:grid;gap:12px}.option{width:100%;display:flex;gap:14px;align-items:center;text-align:left;padding:17px;background:#081625;border:1px solid #263a51;border-radius:14px;color:#eef4fb;cursor:pointer;font-size:16px}.option:hover,.option.selected{border-color:#54b7ff;background:#0d2943}.letter{min-width:34px;height:34px;border-radius:9px;background:#152a41;display:grid;place-items:center;font-weight:900}.option.selected .letter{background:#54b7ff;color:#04101b}.next{margin-top:18px}
-.note{text-align:center;font-size:12px;color:#687a91;margin:16px 0 0}
-.result{text-align:center;display:none}.score{font-size:80px;font-weight:950;margin:12px 0}.score span{font-size:26px;color:#7e8da3}.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0}.stat{background:#081625;border-radius:12px;padding:15px}.stat b{display:block;font-size:22px}.stat small{color:#7f8da2}
-.error{color:#ff8888;font-size:13px;display:none;margin-top:8px}
-footer{text-align:center;color:#53647a;font-size:12px;padding:25px}
-@media(max-width:600px){header{padding:0 4%}main{margin-top:25px}.card{padding:20px}.result-grid{grid-template-columns:1fr}.timer{font-size:25px}}
-</style>
+<title>Quiz Competition | TECH FUSION 2K26</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header><div class="logo"><span>⚡</span> TECH FUSION <small>2K26</small></div><a class="back" href="index.html">← Event Website</a></header>
-
+<header><div class="logo"><span>⚡</span> TECH FUSION <small>2K26</small></div><nav><a href="index.html">Home</a><a href="index.html#events">Events</a><a href="rules.html">Common Rules</a><a href="index.html#contact">Contact</a></nav></header>
 <main>
-<section class="hero"><div class="badge">LIVE ONLINE ROUND</div><h1>Quiz Competition</h1><p>30 seconds per question • One-way quiz • No previous question access</p></section>
+<section class="page-hero"><div class="badge">QUIZ COMPETITION</div><h1>Quiz Competition</h1><p>Test technical knowledge, speed, logic and awareness in an exciting three-round quiz battle.</p></section>
 
-<section id="login" class="card login">
-<h2>Participant Entry</h2>
-<p class="muted">Enter your details to start the quiz. Once started, the quiz session cannot be restarted from this browser.</p>
-<input id="name" placeholder="Participant / Team Name" autocomplete="name">
-<input id="reg" placeholder="Registration ID">
-<div class="rules"><b>Before you start:</b><br>• Every question has exactly 30 seconds.<br>• Previous questions cannot be opened again.<br>• If time expires, the next question opens automatically.<br>• Do not refresh or leave the quiz during the round.</div>
-<div id="loginError" class="error">Please enter both Name and Registration ID.</div>
-<button id="startBtn" class="btn">START QUIZ</button>
+<section><div class="detail-grid">
+<div class="panel"><h2>Event Information</h2><ul><li>Eligibility: Polytechnic / Diploma students only</li><li>Engineering degree students are not eligible</li><li>Team size: Minimum 1, Maximum 4 members</li><li>Registration: Individual ₹50 / Team ₹200</li><li>College / Student ID card is compulsory</li></ul></div>
+<div class="panel"><h2>Coordinator</h2><ul><li><b>Faculty Coordinator:</b> Mr. Kunal Singh — 6377188261</li><li><b>Student Coordinator:</b> Mr. Bhushan Naukar — 9689046292</li><li>Follow the instructions communicated by the coordinators before and during the event.</li></ul></div>
+</div></section>
+
+<section>
+<div class="title"><h2>📋 QUIZ ROUNDS</h2><p>Three rounds • Team size: 1 to 4 members</p></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(270px,100%),1fr));gap:22px">
+<div class="panel"><h2>ROUND 1</h2><ul><li><b>Team:</b> 1 to 4 Members</li><li><b>Mode:</b> Online — Common to All</li><li><b>Syllabus:</b></li><li>Basic Maths</li><li>Reasoning</li><li>GK</li><li>Basic Science of 10th</li></ul></div>
+<div class="panel"><h2>ROUND 2</h2><ul><li><b>Structure:</b> Department-wise distribution</li><li><b>Topics:</b></li><li>Emerging Trends</li><li>Basic Branch Questions</li></ul></div>
+<div class="panel"><h2>ROUND 3</h2><ul><li><b>Topics:</b></li><li>Core Branch Questions</li><li>Technical questions related to the respective branch</li></ul></div>
+</div>
 </section>
 
-<section id="quiz" class="card quiz">
-<div class="quiz-top"><div class="counter" id="counter">Question 1 of 10</div><div class="timer" id="timer">00:30</div></div>
-<div class="progress"><i id="progress"></i></div>
-<h2 class="question" id="question"></h2>
-<div class="options" id="options"></div>
-<button id="nextBtn" class="btn next" disabled>NEXT QUESTION →</button>
-<p class="note">Previous questions are permanently locked.</p>
-</section>
-
-<section id="result" class="card result">
-<div class="badge">QUIZ COMPLETED</div><h2>Great work!</h2><p id="participant"></p>
-<div class="score"><span id="score">0</span><span id="total">/10</span></div>
-<div class="result-grid"><div class="stat"><b id="correct">0</b><small>Correct</small></div><div class="stat"><b id="wrong">0</b><small>Wrong</small></div><div class="stat"><b id="unanswered">0</b><small>Unanswered</small></div></div>
-<p class="muted">Your response has been recorded for this browser session.</p>
-</section>
+<div class="cta"><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScpeavY32d7cDgnq_lv7h-IvRZpEYL2yHkDqorYprxxBTREJQ/viewform?usp=header" target="_blank" rel="noopener">REGISTER FOR QUIZ ↗</a><a class="btn alt" href="index.html">← BACK TO EVENTS</a></div>
 </main>
 <footer>© 2026 TECH FUSION 2K26 • TGPCET Polytechnic</footer>
-
-<script>
-const QUESTIONS=[
-{q:"Which protocol is primarily used for secure web communication?",o:["HTTP","FTP","HTTPS","SMTP"],a:2},
-{q:"What does CPU stand for?",o:["Central Processing Unit","Computer Processing Unit","Central Program Unit","Control Processing Unit"],a:0},
-{q:"Which data structure follows FIFO?",o:["Stack","Queue","Tree","Graph"],a:1},
-{q:"Which language is mainly used to style web pages?",o:["HTML","CSS","SQL","Python"],a:1},
-{q:"What is the binary representation of decimal 5?",o:["100","101","110","111"],a:1},
-{q:"Which device forwards packets between different networks?",o:["Switch","Hub","Router","Repeater"],a:2},
-{q:"Which one is an operating system?",o:["MySQL","Linux","Python","Git"],a:1},
-{q:"What does URL stand for?",o:["Uniform Resource Locator","Universal Routing Link","User Resource List","Unified Remote Login"],a:0},
-{q:"Which technology is commonly used to version-control source code?",o:["Git","FTP","SMTP","DNS"],a:0},
-{q:"Which component performs arithmetic and logical operations in a CPU?",o:["RAM","ALU","Cache","BIOS"],a:1}
-];
-
-let index=0,selected=-1,answers=[],timerId=null,deadline=0,started=false;
-const $=id=>document.getElementById(id);
-function format(s){return "00:"+String(Math.max(0,s)).padStart(2,"0")}
-function render(){
- const q=QUESTIONS[index]; selected=-1;
- $("counter").textContent="Question "+(index+1)+" of "+QUESTIONS.length;
- $("progress").style.width=((index/QUESTIONS.length)*100)+"%";
- $("question").textContent=q.q;
- $("options").innerHTML=q.o.map((x,i)=>'<button class="option" data-i="'+i+'"><span class="letter">'+String.fromCharCode(65+i)+'</span><span>'+x+'</span></button>').join("");
- document.querySelectorAll(".option").forEach(b=>b.onclick=()=>{selected=+b.dataset.i;document.querySelectorAll(".option").forEach(x=>x.classList.remove("selected"));b.classList.add("selected");$("nextBtn").disabled=false});
- $("nextBtn").textContent=index===QUESTIONS.length-1?"SUBMIT QUIZ →":"NEXT QUESTION →";
- deadline=Date.now()+30000; updateTimer();
-}
-function updateTimer(){
- const left=Math.ceil((deadline-Date.now())/1000);
- $("timer").textContent=format(left);
- $("timer").className="timer"+(left<=5?" danger":left<=10?" warn":"");
- if(left<=0){submitAnswer(-1,true);return}
- timerId=setTimeout(updateTimer,250);
-}
-function submitAnswer(value,expired=false){
- clearTimeout(timerId); answers.push(value);
- if(index===QUESTIONS.length-1){finish();return}
- index++; render();
-}
-function finish(){
- $("quiz").style.display="none";$("result").style.display="block";
- let correct=0,unanswered=0;answers.forEach((a,i)=>{if(a<0)unanswered++;else if(a===QUESTIONS[i].a)correct++});
- $("score").textContent=correct;$("total").textContent="/"+QUESTIONS.length;
- $("correct").textContent=correct;$("wrong").textContent=QUESTIONS.length-correct-unanswered;$("unanswered").textContent=unanswered;
- $("participant").textContent=$("name").value+" • "+$("reg").value;
- sessionStorage.setItem("tf_quiz_completed","1");
-}
-$("startBtn").onclick=()=>{
- if(!$("name").value.trim()||!$("reg").value.trim()){$("loginError").style.display="block";return}
- if(sessionStorage.getItem("tf_quiz_completed")){alert("This quiz session has already been completed on this browser.");return}
- $("login").style.display="none";$("quiz").style.display="block";started=true;render();
-};
-$("nextBtn").onclick=()=>submitAnswer(selected,false);
-window.addEventListener("beforeunload",e=>{if(started&&$("quiz").style.display!=="none"){e.preventDefault();e.returnValue=""}});
-history.pushState(null,"",location.href);
-window.onpopstate=()=>history.go(1);
-</script>
 </body>
 </html>
